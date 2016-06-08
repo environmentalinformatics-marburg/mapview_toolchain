@@ -24,7 +24,7 @@ So far, we have outlined why visualisation is an important part of geospatial da
 
 The problems we will solve are:
 
-1. With very few exceptions, there is currently no way to manipulate spatial data in an interactive manner. One noteworthy exeption is `drawExtent()` in the `raster` package which lets the user select a geographic sub-region of a given Raster* object by clicking (twice) on a static plot of the visualised layer and saving the resultant extent or subset in a new object (if desired). Such operations are standard spatial tasks and are part of all standard spatial toolboxes. Having to select from a static plot is not optimal as the region of interest may be small in comparison to the dimension of the original layer. Having interactive capabilities to first navigate to the desired region and then perform some interaction with the intended layer is much more desirable. 
+1. With very few exceptions, there is currently no way to manipulate spatial data in an interactive manner in R. One noteworthy exception is `drawExtent()` in the `raster` package which lets the user select a geographic sub-region of a given Raster* object by clicking (twice) on a static plot of the visualised layer and saving the resultant extent or subset in a new object (if desired). Such operations are standard spatial tasks and are part of all standard spatial toolboxes. Having to select from a static plot is not optimal as the region of interest may be small in comparison to the dimension of the original layer. Having interactive capabilities to first navigate to the desired region and then perform some interaction with the intended layer is much more desirable. 
 
 2. `htmlwidgets` based interactive visualisation packages such as `leaflet` and `mapview` provide great possibilities for data exploration across spatial scales, however, thus far this is a one-way ticket. There is currently no straight-forward way to get data from the JavaScript side back into R. The most suitable (and popular) way to achieve such reactive two-way communication is via package [shiny](https://cran.r-project.org/web/packages/shiny/index.html) (see e.g. [here](), [here]() and [here]()). These solutions are highly optimised for the individual task and focus of the respective app and a generalised framework is likely beyond the cpapbilities of `shiny`. 
 
@@ -32,15 +32,15 @@ The problems we will solve are:
 
 4. There are tools that provide reactive capabilities on the JavaScript side such as [mobx](https://github.com/mobxjs/mobx). There are also first experimental implementations regarding R integration of such tools, e.g. [crosstalk](https://github.com/rstudio/crosstalk). 
 
-Thus, in this applicaiton we propose to implement two-way data exchange between R and JavaScript to enable easy and user-friendly interaction with spatial data utilising the above mentioned tools. Such functionality is useful in general, but for spatial data it is especially desirable as pattern based decisions/selections are very common and form an integral part of many spatial analyses. 
+Thus, in this application we propose to implement two-way data exchange between R and JavaScript to enable easy and user-friendly interaction with spatial data utilising the above mentioned tools. Such functionality is useful in general, but for spatial data it is especially desirable as pattern based decisions/selections are very common and form an integral part of many spatial analyses. 
 
 
 **Which users will benefit from solving these problems?**  
-It is expected that the proposed two-way data exchange and reactive capabilities will enhance spatial analysis experience for all users working with geospatial datasets. With the implementation of simple features in R this group is likely to grow as it will make geospatial data accessible to a wider audience. 
+It is expected that the proposed two-way data exchange and reactive capabilities will enhance spatial analysis experience for all users working with geospatial datasets. With the implementation of simple features in R, this group is likely to grow as it will make geospatial data accessible to a wider audience.   In addition, two-way data exchange with `htmlwidgets` is an unresolved frontier.  Iterating, testing, and working toward a stable generalized approach will help all `htmlwidgets` authors and users.
 
 Furthermore, we intend to implement the two-way data chain so that it will integrate with the highly popular [maggittr](https://cran.r-project.org/web/packages/magrittr/index.html) package meaning that chains such as `x %>% doSomething() %>% mapviewToInteractivelySelectStuff() %>% doMore() %>% visualiseWithLeaflet()` will work with `x` being a spatial object.
 
-In general, we are aiming for complete `leaflet` compatibility so that the developped functionality will benefit the general community by providing interactive reactivity for a wide range of end users, i.e. not limted to users working with `mapview`. 
+In general, we are aiming for complete `leaflet` compatibility so that the developed functionality will benefit the general community by providing interactive reactivity for a wide range of end users, i.e. not limted to users working with `mapview`. 
 
 Given that the use of geospatial data is generally expected to grow in the future (e.g. via Google's location history) we anticipate that intuitive (interactive) data manipulation will in particular aid users that are non-experts in the domain of spatial data analysis. 
 
@@ -54,7 +54,7 @@ We want to solve the problem by carrying out the following steps (M1 refers to m
 
 3. streamline current `mapview` functionality so that it provides a generalised framework that is completely compatible with `leaflet` via a common `htmlwidgets` infrastructure (M3-6)
 
-4. ensure that the proposed two-way data flow is compatible with all relevant spatial classes in R, including `sp`, `raster` and the currently developped `simpleFeatures` (M3-6)
+4. ensure that the proposed two-way data flow is compatible with all relevant spatial classes in R, including `sp`, `raster` and the currently developed `simpleFeatures` (M3-6)
 
 5. write user-oriented tutorial vignettes showing how to use the two-way data chain (M7-10)
 
@@ -64,7 +64,9 @@ We want to solve the problem by carrying out the following steps (M1 refers to m
 
 **Failure modes and recovery plan:**
 
-1. Failure mode: **as far as I see it there is no anticipated failure is there?**
+1. adoption of different standards for two-way communication for htmlwidgets after development
+2. unforeseen problems with `leafletjs` or other open source JavaScript technologies on which we rely
+3. inability of student assistant to complete the task
 
 ## How can the ISC help (this is still from edzers application)
 
