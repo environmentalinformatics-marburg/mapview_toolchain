@@ -1,9 +1,12 @@
 ---
 title: "Interactive data manipulation in mapview"
+linkcolor: blue
+date: '`r format(Sys.Date(), "%d %b %Y")`'
 output:
   html_document: default
-  pdf_document: default
-date: '`r format(Sys.Date(), "%d %b %Y")`'
+  pdf_document:
+    keep_tex: yes
+urlcolor: blue
 ---
 **Applicants:** [Tim Appelhans](http://www.uni-marburg.de/fb19/fachgebiete/umweltinformatik/appelhanst/index.html), [Florian Detsch](http://www.uni-marburg.de/fb19/fachgebiete/umweltinformatik/detschf/index.html), [Christoph Reudenbach](https://www.uni-marburg.de/fb19/personal/mitarbeiter/reudenbachc/index.html) 
 
@@ -86,4 +89,4 @@ In general, we are aiming for an unopinionated framework that is not limited to 
 Given that the use of geospatial data is generally expected to grow in the future (e.g. via Google's location history) we anticipate that intuitive (interactive) data manipulation will in particular aid users that are non-experts in the domain of spatial data analysis. 
 
 
-Development will take place on github, information will be shared and reactions and contributions invited through [r-sig-geo](https://stat.ethz.ch/mailman/listinfo/r-sig-geo), as well as [StackOverflow](http://stackoverflow.com/) and [GIS StackExchange](http://gis.stackexchange.com/). The project will use a standard open source license such as [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) or [MIT](https://opensource.org/licenses/MIT) for maximum dissemination. The work will be published in [blogposts](https://metvurst.wordpress.com/) (quarterly), announced on r-sig-geo (3300 subscribers), and intermediary results will be presented at UseR! 2017. The final result will be published in a paper either submitted to [The R Journal](https://journal.r-project.org/) or to the [Journal of Statistical Software](http://www.jstatsoft.org/); this paper will be available before publication as a package vignette.
+Development will take place on github, information will be shared and reactions and contributions invited through [r-sig-geo](https://stat.ethz.ch/mailman/listinfo/r-sig-geo), as well as [StackOverflow](http://stackoverflow.com/) and [GIS StackExchange](http://gis.stackexchange.com/). The project will use a standard open source license such as [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) or [MIT](https://opensource.org/licenses/MIT) for maximum dissemination. The work will be published in [blogposts](http://r-spatial.org/) (quarterly), announced on r-sig-geo (3300 subscribers), and intermediary results will be presented at UseR! 2017. The final result will be published in a paper either submitted to [The R Journal](https://journal.r-project.org/) or to the [Journal of Statistical Software](http://www.jstatsoft.org/); this paper will be available before publication as a package vignette.
